@@ -19,6 +19,8 @@
 ```
 curl -fsSL https://uisp.ui.com/install > /tmp/uisp_inst.sh && sudo bash /tmp/uisp_inst.sh
 ```
+<img width="1077" height="852" alt="Screenshot 2026-07-28 080139" src="https://github.com/user-attachments/assets/1cf0e90a-551a-4333-af4c-58865f60ccd9" />
+
 ⚠️ This is Ubiquiti's official installer. 
 It:
 - Installs Docker + Docker Compose
@@ -31,6 +33,7 @@ It:
 # Fix: `unms-api` unhealthy / containers failing to start
 - Symptom: `unms-api` container reports unhealthy, `unms-device-ws-1` fails to start with `dependency failed to start: container unms-api is unhealthy`.
 - Cause: `vm.overcommit_memory` kernel setting was `0` (default), which UISP's backend services (Postgres/RabbitMQ-adjacent memory allocation) expect to be `1`.
+<img width="1488" height="987" alt="Screenshot 2026-07-28 080639" src="https://github.com/user-attachments/assets/e33c87bb-e86b-47ce-87f9-3e91cad75d1b" />
 
 # Fix:
 ```
